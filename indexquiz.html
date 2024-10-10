@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Particle Background -->
+    <canvas id="canvas"></canvas>
+
+    <!-- Main Content (Quiz) -->
+    <h1>Test Your Solar System Knowledge</h1>
+
+        <div class="question">
+            <h2>What is the largest planet in our solar system?</h2>
+            <button>Saturn</button>
+            <button class="correct">Jupiter</button>
+            <button>Mars</button>
+            <button>Earth</button>
+            <p class="correctexplanation">
+                <img src="jupitercorrect.png"/>
+            </p>
+            <p class="incorrectexplanation">
+                <img src="jupiterincorrect.png"/>
+            </p>
+        </div>
+        
+        <div class="question">
+            <h2>Which planet in our solar system has massive rings that are easily visible with a small telescope?</h2>
+            <button>Neptune</button>
+            <button>Mercury</button>
+            <button class="correct">Saturn</button>
+            <button>Uranus</button>
+            <p class="correctexplanation">
+                <img id = "saturn" src="saturncorrect.png"/>
+            </p>
+            <p class="incorrectexplanation">
+                <img id = "saturn" src="saturnincorrect.png"/>
+            </p>
+        </div>
+
+        <div class="question">
+            <h2>Mars is often called “The Red Planet,” but why does it look so red to begin with?</h2>
+            <button>Mars is covered by a thick blanket of clouds that only reflect back red light.</button>
+            <button>The surface is incredibly hot, causing it to glow.</button>
+            <button class="correct">The surface has a lot of iron which turns orange-red when it rusts.</button>
+            <button>The Martian atmosphere has lots of red dust particles.</button>
+            <p class="correctexplanation">
+                <img src="marscorrect.png"/>
+            </p>
+            <p class="incorrectexplanation">
+                <img src="marsincorrect.png"/>
+            </p>
+        </div>
+
+        <div class="question">
+            <h2>Did you know that there is a planet that spins on its side? Which planet is it?</h2>
+            <button>Venus</button>
+            <button>Jupiter</button>
+            <button>Mars</button>
+            <button class="correct">Uranus</button>
+            <p class="correctexplanation">
+                <img src="uranuscorrect.png"/>
+            </p>
+            <p class="incorrectexplanation">
+                <img src="uranusincorrect.png"/>
+            </p>
+        </div>
+
+        <div class="question">
+            <h2>During the day this planet gets hot enough to melt lead, but at night the temperature drops to -290&degF?</h2>
+            <button class="correct">Mercury</button>
+            <button>Mars</button>
+            <button>Saturn</button>
+            <button>Neptune</button>
+            <p class="correctexplanation">
+                <img src="mercurycorrect.png"/>
+            </p>
+            <p class="incorrectexplanation">
+                <img src="mercuryincorrect.png"/>
+            </p>
+        </div>
+        
+        <h3> Score: <span class="score">0</span>/5</h3>
+
+    
+    <!-- Add more quiz questions here -->
+
+    <!-- Background Particle Script -->
+    <script src="app.js"></script>
+</body>
+</html>
