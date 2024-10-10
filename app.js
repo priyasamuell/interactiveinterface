@@ -1,7 +1,6 @@
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
-// Handle device pixel ratio for sharp rendering
 function setCanvasSize() {
     const dpi = window.devicePixelRatio || 1;
     canvas.width = window.innerWidth * dpi;
@@ -11,7 +10,6 @@ function setCanvasSize() {
     ctx.scale(dpi, dpi);
 }
 
-// Initial canvas size setup
 setCanvasSize();
 
 class Particle {
@@ -22,7 +20,7 @@ class Particle {
         this.x = Math.floor(x);
         this.y = Math.floor(y);
         this.ctx = this.effect.ctx;
-        this.size = Math.floor(Math.random() * 5 + 0.1);
+        this.size = Math.floor(Math.random() * 5 + 0.1); //particle size adjustments
         this.opacity = Math.random();
         this.vx = 0;
         this.vy = 0;
@@ -38,12 +36,12 @@ class Particle {
 
     draw() {
         this.ctx.fillStyle = 'white';
-        this.ctx.globalAlpha = this.opacity; // Set the particle's opacity
+        this.ctx.globalAlpha = this.opacity; // particle opacity adjustment
         this.ctx.beginPath();
-        this.ctx.arc(this.x, this.y, this.size / 2, 0, Math.PI * 2); // Draw a circle
+        this.ctx.arc(this.x, this.y, this.size / 2, 0, Math.PI * 2); // make particle circlular
         this.ctx.closePath();
-        this.ctx.fill(); // Fill the circle with the set color and opacity
-        this.ctx.globalAlpha = 1; // Reset globalAlpha to default
+        this.ctx.fill(); 
+        this.ctx.globalAlpha = 1; 
     }
     
 
@@ -51,7 +49,7 @@ class Particle {
         this.dx = this.effect.mouse.x - this.x;
         this.dy = this.effect.mouse.y - this.y;
         this.distance = this.dx * this.dx + this.dy * this.dy;
-        this.force = -this.effect.mouse.radius / this.distance * 4;
+        this.force = -this.effect.mouse.radius / this.distance * 4; // distance for mouse particle movement
 
         if (this.distance < this.effect.mouse.radius) {
             this.angle = Math.atan2(this.dy, this.dx);
@@ -71,9 +69,9 @@ class Effect {
         this.height = height;
         this.ctx = context;
         this.particlesArray = [];
-        this.numberOfParticles = 15000;
+        this.numberOfParticles = 15000; // number of particles
         this.mouse = {
-            radius: 8000,
+            radius: 8000, //radius of mouse 
             x: 0,
             y: 0
         };
